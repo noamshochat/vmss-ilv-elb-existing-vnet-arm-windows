@@ -239,8 +239,8 @@
           },
           {
             "properties": {
-              "protocol": "HTTP",
-              "port": 5985,
+              "protocol": "HTTPS",
+              "port": 5986,
               "intervalInSeconds": 15,
               "numberOfProbes": 2
             },
