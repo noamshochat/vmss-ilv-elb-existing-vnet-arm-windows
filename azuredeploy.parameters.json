@@ -25,6 +25,9 @@
     },
     "existingSubnetName": {
       "value": "ExistingSubnetName"
+    },
+    "artifactsLocation":{
+      "value": "${YOUR_ARTIFACT_URI}"
     }
   }
 }

@@ -64,6 +64,9 @@
       "metadata": {
         "description": "Existing Vnet subnet name"
       }
+    },
+    "artifactsLocation": {
+      "type": "string"
     }
     
   },
@@ -152,6 +155,7 @@
         "loadBalancingRules": [
           {
             "properties": {
+
               "frontendIPConfiguration": {
                 "id": "[variables('frontEndIPConfigID')]"
               },
@@ -296,6 +300,27 @@
                       }
                     }
                   ]
+                }
+              }
+            ]
+          },
+          "extensionProfile": {
+            "extensions": [
+              {
+                "name": "customScript",
+                "properties": {
+                  "publisher": "Microsoft.Compute",
+                  "settings": {
+                    "fileUris": [
+                      "[concat(parameters('artifactsLocation'), '/scripts/cse.ps1')]"
+                    ]
+                  },
+                  "typeHandlerVersion": "1.8",
+                  "autoUpgradeMinorVersion": true,
+                  "protectedSettings": {
+                    "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File cse.ps1"
+                  },
+                  "type": "CustomScriptExtension"
                 }
               }
             ]
