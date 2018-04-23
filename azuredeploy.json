@@ -236,6 +236,15 @@
               "numberOfProbes": 2
             },
             "name": "lbprobe"
+          },
+          {
+            "properties": {
+              "protocol": "HTTP",
+              "port": 5985,
+              "intervalInSeconds": 15,
+              "numberOfProbes": 2
+            },
+            "name": "winrm"
           }
         ]
       }
